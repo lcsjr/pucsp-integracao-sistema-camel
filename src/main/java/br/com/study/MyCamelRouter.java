@@ -1,5 +1,7 @@
 package br.com.study;
 
+import br.com.study.model.Pessoa;
+import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,13 +16,12 @@ public class MyCamelRouter extends RouteBuilder {
     public void configure() throws Exception {
        
     	from("file:./temp/inbox?charset=utf-8")
-    	.routeId("teste")
-    	  .convertBodyTo(String.class)
-    	  .log("${body}")
-    	  .bean(myBean, "saySomething")
-    	  .log("${body}")
-    	  //.to("bean:myBean")
-    	  .to("file:./temp/outbox");
+    	.routeId("transfer-file")
+		.convertBodyTo(String.class)
+    	.log("${body}")
+		.process("transformBody")
+		.log("${body}")
+    	.to("file:./temp/outbox");
     	
     	
             
