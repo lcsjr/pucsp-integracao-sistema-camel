@@ -6,19 +6,16 @@ import br.com.study.model.PessoaRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.log4j.Log4j2;
 import org.apache.camel.Exchange;
-import org.apache.camel.Message;
 import org.apache.camel.Processor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Log4j2
 @Component
-public class TransformBody implements Processor {
+public class PersisteProcessor implements Processor {
 
     private final PessoaRepository repository;
 
-
-    public TransformBody(PessoaRepository repository) {
+    public PersisteProcessor(PessoaRepository repository) {
         this.repository = repository;
     }
 

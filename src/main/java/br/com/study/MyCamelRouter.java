@@ -1,7 +1,5 @@
 package br.com.study;
 
-import br.com.study.model.Pessoa;
-import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,7 +12,11 @@ public class MyCamelRouter extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-       
+
+		errorHandler(deadLetterChannel("file:./temp/dead")
+						.maximumRedeliveries(3)
+				.onRedelivery(new DeadChannelProcessor()));
+
     	from("file:./temp/inbox?charset=utf-8")
     	.routeId("transfer-file")
     	.log("${body}")
@@ -22,8 +24,5 @@ public class MyCamelRouter extends RouteBuilder {
 		.log("${body}")
     	.to("file:./temp/outbox");
     	
-    	
-            
-            
-    }
+    	}
 }
