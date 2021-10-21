@@ -17,7 +17,6 @@ public class MyCamelRouter extends RouteBuilder {
        
     	from("file:./temp/inbox?charset=utf-8")
     	.routeId("transfer-file")
-		.convertBodyTo(String.class)
     	.log("${body}")
 		.process("transformBody")
 		.log("${body}")

@@ -3,6 +3,7 @@ package br.com.study;
 import br.com.study.model.Pessoa;
 import br.com.study.model.PessoaDTO;
 import br.com.study.model.PessoaRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.log4j.Log4j2;
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
@@ -24,11 +25,18 @@ public class TransformBody implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
 
-        PessoaDTO in = exchange.getIn().getBody(PessoaDTO.class);
+        String in = exchange.getIn().getBody(String.class);
+        log.info("Pessoa String : {}", in);
 
-        log.info("Pessoa DTO registrada: {}", in);
+        ObjectMapper mapper = new ObjectMapper();
+        PessoaDTO obj = mapper.readValue( in, PessoaDTO.class);
+        log.info("Pessoa DTO : {}", obj);
 
-        Pessoa build = Pessoa.builder().age(in.getAge()).career(in.getCareer()).name(in.getName()).build();
+        Pessoa build = Pessoa.builder()
+                .age(obj.getAge())
+                .career(obj.getCareer())
+                .name(obj.getName())
+                .build();
 
         log.info("Pessoa Entity registrada: {}", build);
 
