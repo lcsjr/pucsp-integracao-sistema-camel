@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.com.study.model.Student;
-import br.com.study.model.StudentRepository;
+import br.com.study.repository.StudentRepository;
 
 @Component("myBean")
 public class MyBean {

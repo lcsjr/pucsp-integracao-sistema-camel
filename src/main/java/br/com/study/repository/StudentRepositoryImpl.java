@@ -1,14 +1,16 @@
-package br.com.study.model;
+package br.com.study.repository;
 
 import java.util.Map;
 import java.util.Set;
 
+import br.com.study.model.Student;
+import br.com.study.repository.StudentRepository;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class StudentRepositoryImpl implements StudentRepository{
+public class StudentRepositoryImpl implements StudentRepository {
 
 	private static final String STUDENT = "STUDENT";
 

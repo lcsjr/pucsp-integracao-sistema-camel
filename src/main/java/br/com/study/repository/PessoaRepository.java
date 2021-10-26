@@ -1,5 +1,6 @@
-package br.com.study.model;
+package br.com.study.repository;
 
+import br.com.study.model.Pessoa;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
