@@ -1,8 +1,10 @@
-package br.com.study.model;
+package resource;
 
 import java.util.Map;
 import java.util.Set;
 
+import br.com.study.model.Student;
+import br.com.study.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,8 +1,8 @@
-package br.com.study;
+package br.com.study.controller;
 
 import br.com.study.model.Pessoa;
 import br.com.study.model.PessoaDTO;
-import br.com.study.model.PessoaRepository;
+import br.com.study.repository.PessoaRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.log4j.Log4j2;
 import org.apache.camel.Exchange;

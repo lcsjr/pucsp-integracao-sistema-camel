@@ -1,4 +1,6 @@
-package br.com.study.model;
+package br.com.study.repository;
+
+import br.com.study.model.Student;
 
 import java.util.Map;
 import java.util.Set;
