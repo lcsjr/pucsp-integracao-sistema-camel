@@ -7,10 +7,7 @@ server:
 
 spring:
   application:
-    name: sample-spring-redis
-  redis:
-    host: localhost
-    port: 6379
+    name: pucsp-integracao-sistema-luiz-lucas
   jmx:
     enabled: true
   datasource:

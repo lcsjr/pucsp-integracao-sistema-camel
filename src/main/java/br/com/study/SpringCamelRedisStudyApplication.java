@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringCamelRedisStudyApplication {
+public class PUCSP2SemProjetoIntegracaoSistemas {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringCamelRedisStudyApplication.class, args);
+		SpringApplication.run(PUCSP2SemProjetoIntegracaoSistemas.class, args);
 	}
 
 }

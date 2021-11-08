@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.study</groupId>
-	<artifactId>spring-camel-redis-study</artifactId>
+	<artifactId>pucsp-integracao-sistema-luiz-lucas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-camel-redis-study</name>
-	<description>Demo project for Spring Boot</description>
+	<name>pucsp-integracao-sistema-camel</name>
+	<description>Desenvolvido para trabalho de itnegracao de Sistemas da PUCSP para o Prof. Adre </description>
 
 	<properties>
 		<java.version>1.8</java.version>
