@@ -9,9 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyCamelRouter extends RouteBuilder {
 
-    @Autowired
-    MyBean myBean;
-
 	@Autowired
 	DeadRepository repository;
 
