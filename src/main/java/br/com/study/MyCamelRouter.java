@@ -21,8 +21,8 @@ public class MyCamelRouter extends RouteBuilder {
 
     	from("file:./temp/inbox?charset=utf-8")
     	.routeId("transfer-file")
+		.delay(3000)
 		.process("persisteProcessor")
-    	.to("file:./temp/outbox")
-		.delay(3000);
+    	.to("file:./temp/outbox");
     }
 }
